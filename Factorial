@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main()
+{
+	double b, faktoriyel=1;
+	
+	printf("Faktoriyelini hesaplamak istediginiz bir sayiyi giriniz.\n");
+	scanf("%lf",&b);
+	
+	while(b>1)
+	{
+		
+		faktoriyel = faktoriyel*b;
+		b--;
+	}
+	
+	printf("\nGirdiginiz sayinin faktoriyeli %.0lf\n",faktoriyel);
+	return 0;
+}
