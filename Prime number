@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main()
+{
+	int s1,sayac=0;
+	
+	printf("Gir.\n");
+	scanf("%d",&s1);
+	
+	for(int i=2;i<s1;i++)
+	{
+		if(s1%1==0)
+		{
+			sayac++;
+		}
+	}
+	if(sayac!=0)
+	{
+		printf("Asal.");
+	}
+	return 0;
+}
