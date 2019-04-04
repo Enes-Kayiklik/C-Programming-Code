@@ -47,7 +47,7 @@ int main()
     }
     if(bas>son)
     {
-        printf("dizide aranan eleman yok bireman");
+        printf("dizide aranan eleman bulunamadi");
     }
 return 0;
 }
