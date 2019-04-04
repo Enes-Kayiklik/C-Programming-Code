@@ -1,0 +1,392 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+#include <time.h>
+#include <windows.h>
+
+void sorma();
+void main_menu();
+void faktoriyel();
+void karekok();
+void yazi_tura();
+void not_ortalamasi();
+void faiz_hesaplama();
+void alan_hesaplama();
+void kuvvet_alma();
+void kup();
+void silindir();
+void kapatma();
+void loading();
+
+int main()
+{
+	system("color 3");
+	
+	main_menu();
+
+	return 0;
+}
+void main_menu()
+{
+	printf("\n\n\t\t\t\t\t\xB2\xB2\xB2 Matematik Menusu v1.1 \xB2\xB2\xB2");
+	printf("\n\n\t\tYapmak istediginiz islemi seciniz.\n\n");
+	
+	printf("\t\t\tA-Faktoriyel hesaplama.\n");
+	printf("\t\t\tB-Karekok bulma.\n");
+	printf("\t\t\tC-Yazi-Tura atma.\n");
+	printf("\t\t\tD-Not ortalamasi hesaplama.\n");
+	printf("\t\t\tE-Faiz hesaplama.\n");
+	printf("\t\t\tF-Hacim hesaplama.\n");
+	printf("\t\t\tG-Us alma. \n");
+	
+	char secenek;
+	line14:
+	scanf("%s",&secenek);
+	
+	switch(secenek)
+	{
+		case 'a':
+			faktoriyel();
+			break;
+		case 'b':
+			karekok();
+			break;
+		case 'c':
+			yazi_tura();
+			break;
+		case 'd':
+			not_ortalamasi();
+			break;
+		case 'e':
+			faiz_hesaplama();
+			break;
+		case 'f':
+			alan_hesaplama();
+			break;
+		case 'g':
+			kuvvet_alma();
+			break;
+		default:
+			printf("Yanlis bir deger girdiniz.\n");
+			goto line14;
+			break;
+	}
+}
+void faktoriyel()
+{
+	printf("Yukleniyor");
+	for(int j=0;j<6;j++)
+	{
+		loading();
+		printf(".");
+	}
+	system("cls");
+	int faktoriyel=1 , girilen_sayi,secim;
+	
+	printf("\n\n\t\tFaktoriyelini hesaplamak istediginiz sayiyi giriniz.\n");
+	scanf("%d",&girilen_sayi);
+	printf("Hesaplaniyor");
+	for(int j=0;j<6;j++)
+	{
+		loading();
+		printf(".");
+	}
+	
+	system("cls");
+	
+	for(int i=1;i<=girilen_sayi;i++)
+	{
+		faktoriyel *=i;
+	}
+	printf("\n\n\t\tSonuc = %d",faktoriyel);
+	
+	sorma();
+}
+void karekok()
+{
+	printf("Yukleniyor");
+	for(int j=0;j<6;j++)
+	{
+		loading();
+		printf(".");
+	}
+	system("cls");
+	int  girilen_sayi;
+	float karekok;
+	
+	printf("\n\n\t\tKarekokunu bulmak istediginiz sayiyi giriniz.\n");
+	scanf("%d",&girilen_sayi);
+	printf("Hesaplaniyor");
+	for(int j=0;j<6;j++)
+	{
+		loading();
+		printf(".");
+	}
+	
+	system("cls");
+	
+	karekok=sqrt(girilen_sayi);
+	
+	printf("\n\t\tSonuc = %.2f",karekok);
+	
+	sorma();
+}
+
+void yazi_tura()
+{
+	printf("Yukleniyor");
+	for(int j=0;j<6;j++)
+	{
+		loading();
+		printf(".");
+	}
+	system("cls");
+	srand(time(NULL));
+	
+	int sonuc , girilen_sayi,tura_sayar=0,yazi_sayar=0;
+	
+	printf("\n\n\t\tKac defa yazi-tura atmak istersiniz?\n");
+	scanf("%d",&girilen_sayi);
+	
+	system("cls");
+	
+	for(int i=1;i<=girilen_sayi;i++)
+	{
+		sonuc=rand() % 2;
+		
+		if (sonuc==0)
+		{	
+			printf("\tTura\n\n");
+			tura_sayar++;
+		}
+		else
+		{
+			printf("\tYazi\n\n");
+			yazi_sayar++;
+		}	
+	}
+	printf("\tCikan tura sayisi = %d\n\tCikan yazi sayisi = %d",tura_sayar,yazi_sayar);
+	
+	sorma();
+}
+void not_ortalamasi()
+{
+	printf("Yukleniyor");
+	for(int j=0;j<6;j++)
+	{
+		loading();
+		printf(".");
+	}
+	system("cls");
+	int sayi,etki;
+	float sinav,toplam;
+	
+	printf("\n\n\t\tKac adet not gireceksiniz ?\n");
+	scanf("%d",&sayi);
+	system("cls");
+	
+	for(int i=1;i<=sayi;i++)
+	{
+		printf("\n\n\t\t%d. Sinavin notunu giriniz.\n",i);
+		scanf("%f",&sinav);
+		system("cls");
+		printf("\n\n\t\tSinavin ne kadar etkili oldugunu girini.\n\t\t Orn:Yuzde 40 (Yuzde yazisi olmadan)\n");
+		scanf("%d",&etki);
+		system("cls");
+		
+		sinav=(float)sinav*etki/100;
+		
+		toplam+=sinav;
+	}
+	printf("\n\n\t\tOrtalama = %.2f",toplam);
+	
+	sorma();
+}
+void faiz_hesaplama()
+{
+	printf("Yukleniyor");
+	for(int j=0;j<6;j++)
+	{
+		loading();
+		printf(".");
+	}
+	system("cls");
+	int ana_para,faiz_orani,sure_ay;
+	float kazanilan_para,sure_yil;
+	
+	printf("\n\n\t\tFaize yatiracaginiz para miktarini giriniz.\n");
+	scanf("%d",&ana_para);
+	system("cls");
+	
+	printf("\n\n\t\tNe kadar sure yatiracaginizi giriniz.(Ay)\n");
+	scanf("%d",&sure_ay);
+	
+	sure_yil=(float)sure_ay/12;
+	
+	system("cls");
+	
+	printf("\n\t\tFaiz oranini giriniz.(YIL)\n");
+	scanf("%d",&faiz_orani);
+	
+	
+	
+	kazanilan_para = ana_para*sure_yil*faiz_orani/100;
+	printf("Hesaplaniyor");
+	for(int j=0;j<6;j++)
+	{
+		loading();
+		printf(".");
+	}
+	system("cls");
+	
+	printf("\n\t\t%.1f yil sonunda toplam %.2f lira paraniz olacaktir.",sure_yil,kazanilan_para+ana_para);
+	
+	sorma();
+}
+void alan_hesaplama()
+{
+	printf("Yukleniyor");
+	for(int j=0;j<6;j++)
+	{
+		loading();
+		printf(".");
+	}
+	system("cls");
+	int secici;
+	bas:
+	printf("\n\n\t\tHangi cismin hacmini hesaplamak istersiniz?\n");
+	
+	printf("\n\t\t1-Kup");
+	printf("\n\t\t2-Silindir\n");
+	scanf("%d",&secici);
+	
+	switch(secici)
+	{
+		case 1:
+			kup();
+			break;
+		case 2:
+			silindir();
+			break;
+		default:
+			printf("\n\n\t\tYanlis secim yaptiniz.");
+			goto bas;
+	}
+	sorma();
+}
+void kuvvet_alma()
+{
+	printf("Yukleniyor");
+	for(int j=0;j<6;j++)
+	{
+		loading();
+		printf(".");
+	}
+	system("cls");
+	float taban,us,sonuc;
+	
+	printf("\n\n\t\tTabanini giriniz.\n");
+	scanf("%f",&taban);
+	
+	system("cls");
+	
+	printf("\n\t\tUssunu giriniz.\n");
+	scanf("%f",&us);
+	
+	printf("Hesaplaniyor");
+	for(int j=0;j<6;j++)
+	{
+		loading();
+		printf(".");
+	}
+	
+	system("cls");
+	
+	sonuc = (float)pow(taban,us);
+	
+	printf("\n\n\t\tSonuc = %.2f",sonuc);
+	
+	sorma();
+}
+void kup()
+{
+	printf("Hesaplaniyor");
+	for(int j=0;j<6;j++)
+	{
+		loading();
+		printf(".");
+	}
+	system("cls");
+	int kenar;
+	
+	printf("\n\n\t\tKupun bir kenarini giriniz.");
+	scanf("%d",&kenar);
+	
+	system("cls");
+	
+	printf("\n\n\t\tKupun hacmi=%d",kenar*kenar*kenar);
+	
+	sorma();
+}
+void silindir()
+{
+	printf("Hesaplaniyor");
+	for(int j=0;j<6;j++)
+	{
+		loading();
+		printf(".");
+	}
+	system("cls");
+	int yaricap,yukseklik;
+	
+	printf("\n\n\t\tSilindirin yaricapini giriniz.");
+	scanf("%d",&yaricap);
+	printf("\n\n\t\tSilindirin yuksekligini giriniz.");
+	scanf("%d",&yukseklik);
+	
+	system("cls");
+	
+	printf("\n\n\t\tSilindirin hacmi=%d",3*yaricap*yaricap*yukseklik);
+	printf("\n\n\t\tNot:Pi 3 alindi");
+	
+	sorma();
+}
+void kapatma()
+{
+	printf("\n\t\tBizi tercih ettiginiz icin tesekkurler.\n\n");
+	system("pause");
+}
+void sorma()
+{
+	int secenek;
+	
+	bas:
+	
+	printf("\n\n\t\tMenuye donmek icin 1 cikmak icin 0 tuslayiniz.\n");
+	scanf("%d",&secenek);
+	
+	system("cls");
+	
+	if(secenek==1)
+	{
+		main_menu();
+	}
+	else if(secenek==0)
+	{
+		kapatma();
+	}
+	else
+	{
+		printf("\n\t\tYanlis secim yaptiniz.");
+		goto bas;
+	}
+}
+void loading()
+{
+	int k=0;
+	
+	for(int i=0;i<20000000;i++)
+	{
+		k=i;
+	}
+}
