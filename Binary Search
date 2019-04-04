@@ -4,7 +4,7 @@ int main()
 {
 	int tutucu,aranan,kume[13]={5,8,7,6,3,9,1,5,25,12,17,19};
     int bas,orta,son;
-	for(int i=0;i<12;i++)			//Buble sort
+	for(int i=0;i<12;i++)			//Bubble sort
 	{
 		for(int j=0;j<12;j++)
 		{
