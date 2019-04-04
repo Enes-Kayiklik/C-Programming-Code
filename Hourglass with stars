@@ -1,0 +1,33 @@
+ #include <stdio.h>
+ 
+int main()
+{
+    int girilen_sayi,satir, bosluk=0;
+    
+    printf("Enyer a number.");
+    scanf("%d",&girilen_sayi);
+    
+    satir=girilen_sayi;
+    
+    for(int i=0;i<girilen_sayi;i++)
+    {
+    	for(int j=0;j<satir;j++)
+    	{
+    		printf("*");	
+		}
+		if( i < (girilen_sayi / 2) )
+		{
+            satir-=2;
+            bosluk++;
+        }
+       	else
+		{
+            satir+=2;
+            bosluk--;
+        }
+		printf("\n");
+        for(int j=0; j<bosluk;j++)    
+        printf(" ");	
+	}
+    return 0;
+}
