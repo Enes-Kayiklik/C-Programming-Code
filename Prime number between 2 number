@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+int main()
+{
+	int s1,s2,sayac=0;
+
+	printf("2 adet sayi giriniz.\n");
+	scanf("%d %d",&s1,&s2);
+	
+	if(s1==1)
+	{
+		printf("1 Asal degil.");
+	}
+	else
+	{
+			for(int i=s1;s1<=s2;s1++)
+	{
+		for(int k=2;k<s1;k++)
+		{
+			if(s1%k==0)
+			{
+				sayac++;
+			}
+		}
+		if(sayac==0)
+		{
+			printf("%d\n",s1);
+		}
+		else
+			sayac=0;
+	}
+
+	}
+	return 0;
+}
