@@ -1,0 +1,53 @@
+#include <stdio.h>
+
+int main()
+{
+	int tutucu,aranan,kume[13]={5,8,7,6,3,9,1,5,25,12,17,19};
+    int bas,orta,son;
+	for(int i=0;i<12;i++)
+	{
+		for(int j=0;j<12;j++)
+		{
+			if(kume[j]>kume[j+1])
+			{
+				tutucu=kume[j+1];
+				kume[j+1]=kume[j];
+				kume[j]=tutucu;
+			}
+		}
+	}
+	for(int i=0;i<=12;i++)
+	{
+		printf("%d ",kume[i]);
+	}
+
+	printf("\nGir.");
+	scanf("%d",&aranan);
+
+    bas=0;
+    son=12;
+    orta=6;
+
+    while(bas<=son)
+    {
+        if(kume[orta]<aranan)
+        {
+            bas=orta+1;
+        }
+        else if(kume[orta]==aranan)
+        {
+            printf("%d",orta+1);
+            break;
+        }
+        else
+        {
+            son=orta-1;
+        }
+        orta= (bas+son)/2;
+    }
+    if(bas>son)
+    {
+        printf("dizide aranan eleman yok bireman");
+    }
+return 0;
+}
