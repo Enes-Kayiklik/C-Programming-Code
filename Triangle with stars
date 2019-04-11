@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main()
+{
+    int girilen_sayi, sayi1,sayi2,yildiz;
+    yildiz = 1;
+
+    printf("Enter a number.\n");
+    scanf("%d",&girilen_sayi);
+
+    printf("\n");
+
+    for(sayi1=0;sayi1<girilen_sayi;sayi1++)
+    {
+        for(sayi2=0;sayi2<yildiz;sayi2++)
+        {
+             printf("*");
+        }
+        yildiz++;
+        printf("\n");
+    }
+
+
+
+
+    return 0;
+}
