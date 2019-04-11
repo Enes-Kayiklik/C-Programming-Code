@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main()
+{
+	int yildiz=1,gir;
+	int bosluk;
+	
+	printf("Enter a number.\n");
+	scanf("%d",&gir);
+	
+	printf("\n\n\n");
+	
+	bosluk = gir-1;
+	for(int i=yildiz;yildiz<=(gir+gir-1);i++)
+	{
+		for(int i=1;i<=bosluk;i++)
+		{
+			printf(" ");
+			
+		}
+		
+		for(int j=1;j<=yildiz;j++)
+		{
+			printf("*");
+		}
+		printf("\n");
+		bosluk--;
+		yildiz+=2;
+	}
+	
+	
+	return 0;
+}
